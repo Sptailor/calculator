@@ -1,8 +1,4 @@
-const resultScreen=document.getElementById('result');
-
-
-
-
+const resultScreen = document.getElementById('result');
 
 
 const add = function (a, b) {
@@ -20,97 +16,113 @@ const multiply = function (array) {
 };
 
 const divide = function (a, b) {
-    return a/b;
+    return a / b;
 };
 
-var num1='';
-var num2='';
-var temp='';
-var operator='';
-var display='';
+var num1 = '';
+var num2 = '';
+var temp = '';
+var operator = '';
+var display = '';
 function operate() {
-    
-    num2=parseInt(temp);
+
+    num2 = parseInt(temp);
     if (operator === '+') {
-       display= num1 + num2;
+        display = num1 + num2;
     } else if (operator === '-') {
-        display= num1 - num2;
+        display = num1 - num2;
     } else if (operator === '*') {
-        display= num1 * num2;
+        display = num1 * num2;
     } else if (operator === '/') {
         if (num2 !== 0) {
-            display= num1 / num2;
+            display = num1 / num2;
         } else {
             return "Error: Division by zero";
         }
-    } 
+    }
     clear();
-    updateDisplay('',display);
+    updateDisplay('', display);
+
+
 }
 
-function setOperator(x){
-    if(display!==''){
-        num1=parseInt(temp);
-        console.log("num 1 is "+num1)
-         temp='';
-        operator=x;
-        updateDisplay(display,x);
+
+function setOperator(x) {
+   
+
+    if (num1 == '') {
+        num1 = parseInt(temp);
+        
+        temp = '';
+        if (operator === '') {
+
+            operator = x;
+            updateDisplay(display, x);
+        }
+    }
+
+
+}
+
+function appendNumber(x) {
+    
+    if (num2 !== '') {
+        num2 = ''
+        clear();
+
+    } display = resultScreen.innerText
+    if (operator === '' && display != '') {
+        temp = display + x;
+
+    } else if (operator === '') {
+
+        temp = x;
+    }
+    else {
+
+        temp += x;
 
     }
+    updateDisplay(display, x);
+
+
 }
+function updateDisplay(display, update) {
 
-function appendNumber(x){
-    display=resultScreen.innerText
-    if(operator ==='' && display!=''){
-        temp=display+ x;
-       
-    }else if(operator ==='')
-    {
-        temp=x;
-    }
-    else{
+    if (update == '') {
 
-        temp+=x;
-
-    } 
-    updateDisplay(display,x);
-
-    
-}
-function updateDisplay(display,update){
-   
-    if(update==''){
-       
-        display=''; 
-        resultScreen.innerText=display;
+        display = '';
+        resultScreen.innerText = display;
 
     }
-    
-     resultScreen.innerText+=update;
-    
-   
+
+    resultScreen.innerText += update;
 
 
-     display=resultScreen.innerText;
-  console.log("Display updated to: "+ display);
+
+
+    display = resultScreen.innerText;
+    
 
 
 
 }
-const clearBtn=document.getElementById("clear");
-clearBtn.addEventListener("click",()=>clear())
-function clear(){
-   
-    num1='';
-    num2='';
-    operator='';
-    temp='';
+const clearBtn = document.getElementById("clear");
+clearBtn.addEventListener("click", () => clear())
+function clear() {
 
-   resultScreen.innerText=' ';
+    num1 = '';
+
    
-   console.log("Clear to: "+resultScreen.innerText);
+    temp = '';
+
+    resultScreen.innerText = ' ';
+
+   
 
 }
+
+
 
 
 

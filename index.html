@@ -6,37 +6,50 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
+   
 </head>
-
-
 
 <body>
     <div class="calculator">
         <text id="result"></text>
         <div class="buttons">
-          <button onclick="appendNumber('7')">7</button>
-          <button onclick="appendNumber('8')">8</button>
-          <button onclick="appendNumber('9')">9</button>
-          <button onclick="setOperator('/')">/</button>
+          <button onclick="appendNumber('7')" value="7">7</button>
+          <button onclick="appendNumber('8')" value="8">8</button>
+
+          <button onclick="appendNumber('9')" value="9">9</button>
+          <button onclick="setOperator('/')" class="operator" value="/">/</button>
     
-          <button onclick="appendNumber('4')">4</button>
-          <button onclick="appendNumber('5')">5</button>
-          <button onclick="appendNumber('6')">6</button>
-          <button onclick="setOperator('*')">x</button>
+          <button onclick="appendNumber('4')" value="4">4</button>
+          <button onclick="appendNumber('5')" value="5">5</button>
+          <button onclick="appendNumber('6')" value="6">6</button>
+          <button onclick="setOperator('*')" class="operator" value="x">x</button>
+
     
-          <button onclick="appendNumber('1')">1</button>
-          <button onclick="appendNumber('2')">2</button>
-          <button onclick="appendNumber('3')">3</button>
-          <button onclick="setOperator('-')">-</button>
-    
-          <button onclick="appendNumber('0')">0</button>
-          <button id="clear" onclick="clear()">C</button>
-          <button onclick="operate()">=</button>
-          <button onclick="setOperator('+')">+</button>
+          <button onclick="appendNumber('1')" value="1">1</button>
+          <button onclick="appendNumber('2')" value="2">2</button>
+          <button onclick="appendNumber('3')" value="3">3</button>
+          <button onclick="setOperator('-')" class="operator" value="-">-</button>
+          
+          <button id="clear" onclick="clear()" class="cancel" value="C">C</button>
+          <button onclick="appendNumber('0')" value="0">0</button>
+          
+          <button onclick="operate()" class="solve" value="=">=</button>
+          <button onclick="setOperator('+')" class="operator" value="+">+</button>
         </div>
+        
     <div>
-    
+       
+        
 
 
 </body>
+<footer>Designed and developed by Suhail Tailor</footer>
+
+
+
+
+
+
+
+
 </html>
