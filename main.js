@@ -40,8 +40,10 @@ function operate() {
             return "Error: Division by zero";
         }
     }
+    console.log( "Temp: "+ temp+  " num1: "+num1+" num2: "+ num2 +"   ="+ display);
     clear();
     updateDisplay('', display);
+    
 
 
 }
@@ -50,27 +52,34 @@ function operate() {
 function setOperator(x) {
    
 
-    if (num1 == '') {
+ 
+     if (operator === '') {
+    if(display==''){
+        console.log("used temp: "+temp);
         num1 = parseInt(temp);
+    }else{
+        console.log("used "+resultScreen.innerText);
+
+        num1=parseInt(resultScreen.innerText);
+    }
         
         temp = '';
-        if (operator === '') {
+       
 
             operator = x;
             updateDisplay(display, x);
         }
-    }
+
+        
+ 
 
 
 }
 
 function appendNumber(x) {
     
-    if (num2 !== '') {
-        num2 = ''
-        clear();
-
-    } display = resultScreen.innerText
+   
+    display = resultScreen.innerText
     if (operator === '' && display != '') {
         temp = display + x;
 
@@ -83,6 +92,7 @@ function appendNumber(x) {
         temp += x;
 
     }
+    console.log( "Temp: "+ temp+  " num1: "+num1+" num2: "+ num2);
     updateDisplay(display, x);
 
 
@@ -112,6 +122,8 @@ clearBtn.addEventListener("click", () => clear())
 function clear() {
 
     num1 = '';
+    operator='';
+    num2='';
 
    
     temp = '';
