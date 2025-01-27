@@ -53,7 +53,7 @@ function setOperator(x) {
    
 
  
-     if (operator === '') {
+    if (operator === '') {
     if(display==''){
         console.log("used temp: "+temp);
         num1 = parseInt(temp);
@@ -62,13 +62,20 @@ function setOperator(x) {
 
         num1=parseInt(resultScreen.innerText);
     }
+
         
         temp = '';
        
 
             operator = x;
             updateDisplay(display, x);
-        }
+     }else{
+       resultScreen.innerText=resultScreen.innerText .slice(0,-1);
+       operator=x;
+       updateDisplay(display,x);
+
+
+     }
 
         
  
